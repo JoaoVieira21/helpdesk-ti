@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HelpDesk TI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HelpDesk TI</h1>
+    </header>
+
+    <main>
+        <div class="card">
+    <h2>Novo chamado</h2>
+
+    <form id="form-chamado">
+
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" required></textarea>
+
+        <label for="prioridade">Prioridade</label>
+        <select id="prioridade">
+            <option value="Baixa">Baixa</option>
+            <option value="Média">Média</option>
+            <option value="Alta">Alta</option>
+        </select>
+
+        <button type="submit">Abrir chamado</button>
+
+    </form>
+</div>
+    <div class="card">
+        <h2>Chamados de suporte</h2>
+
+        <div id="lista-chamados">
+            Carregando chamados...
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

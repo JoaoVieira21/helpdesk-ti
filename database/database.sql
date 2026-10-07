@@ -1,0 +1,28 @@
+CREATE TABLE usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    setor VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE chamados (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo VARCHAR(150) NOT NULL,
+    descricao TEXT NOT NULL,
+    prioridade VARCHAR(20) NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    usuario_id INTEGER NOT NULL,
+    atendente VARCHAR(100),
+    data_abertura DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE solucoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chamado_id INTEGER NOT NULL,
+    descricao TEXT NOT NULL,
+    data_solucao DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (chamado_id) REFERENCES chamados(id)
+);
