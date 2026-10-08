@@ -26,3 +26,10 @@ CREATE TABLE solucoes (
 
     FOREIGN KEY (chamado_id) REFERENCES chamados(id)
 );
+CREATE TABLE IF NOT EXISTS usuarios_login (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    tipo VARCHAR(20) NOT NULL DEFAULT 'usuario'
+);

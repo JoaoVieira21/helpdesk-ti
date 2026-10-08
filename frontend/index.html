@@ -12,43 +12,111 @@
 
 <body>
 
-    <header>
-        <h1>HelpDesk TI</h1>
+    <header class="topo">
+        <div>
+            <h1>HelpDesk TI</h1>
+            <p>Sistema de gerenciamento de chamados</p>
+        </div>
     </header>
 
-    <main>
-        <div class="card">
-    <h2>Novo chamado</h2>
+    <main class="container">
 
-    <form id="form-chamado">
+        <!-- RESUMO -->
+        <section class="resumo">
 
-        <label for="titulo">Título</label>
-        <input type="text" id="titulo" required>
+            <div class="resumo-card">
+                <span class="resumo-titulo">Total de chamados</span>
+                <strong id="total-chamados">0</strong>
+            </div>
 
-        <label for="descricao">Descrição</label>
-        <textarea id="descricao" required></textarea>
+            <div class="resumo-card">
+                <span class="resumo-titulo">Abertos</span>
+                <strong id="chamados-abertos">0</strong>
+            </div>
 
-        <label for="prioridade">Prioridade</label>
-        <select id="prioridade">
-            <option value="Baixa">Baixa</option>
-            <option value="Média">Média</option>
-            <option value="Alta">Alta</option>
-        </select>
+            <div class="resumo-card">
+                <span class="resumo-titulo">Em atendimento</span>
+                <strong id="chamados-atendimento">0</strong>
+            </div>
 
-        <button type="submit">Abrir chamado</button>
+            <div class="resumo-card">
+                <span class="resumo-titulo">Resolvidos</span>
+                <strong id="chamados-resolvidos">0</strong>
+            </div>
 
-    </form>
-</div>
-    <div class="card">
-        <h2>Chamados de suporte</h2>
+        </section>
 
-        <div id="lista-chamados">
-            Carregando chamados...
-        </div>
-    </div>
-</main>
 
-<script src="script.js"></script>
+        <!-- NOVO CHAMADO -->
+        <section class="card">
+
+            <div class="card-titulo">
+                <div>
+                    <h2>Novo chamado</h2>
+                    <p>Abra um novo chamado para a equipe de suporte.</p>
+                </div>
+            </div>
+
+            <form id="form-chamado">
+
+                <div class="campo">
+                    <label for="titulo">Título</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex.: Computador não liga"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea
+                        id="descricao"
+                        placeholder="Descreva o problema encontrado..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="prioridade">Prioridade</label>
+
+                    <select id="prioridade">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Abrir chamado
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- CHAMADOS -->
+        <section class="card">
+
+            <div class="card-titulo">
+                <div>
+                    <h2>Chamados de suporte</h2>
+                    <p>Acompanhe os chamados registrados no sistema.</p>
+                </div>
+            </div>
+
+            <div id="lista-chamados">
+                Carregando chamados...
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
